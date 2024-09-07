@@ -1,2 +1,6 @@
 **/obj/
 **/bin/
+
+# Ignore AssemblyInfo auto-generated files
+HelloWorldApp.AssemblyInfo.cs
+HelloWorldApp.AssemblyInfoInputs.cache
