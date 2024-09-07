@@ -2,5 +2,5 @@
 **/bin/
 
 # Ignore AssemblyInfo auto-generated files
-HelloWorldApp.AssemblyInfo.cs
-HelloWorldApp.AssemblyInfoInputs.cache
+AssemblyInfo.cs
+AssemblyInfoInputs.cache
