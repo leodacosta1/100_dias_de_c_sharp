@@ -39,7 +39,14 @@ class Program
             
                 case "3":
                     result = num1 / num2;
-                    Console.WriteLine("O Resultado é: " + result + " （⌐■_■)");
+                    if (num2 != 0)
+                        {
+                            Console.WriteLine("O Resultado é: " + result + " （⌐■_■)");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Não pode dividir por zero!");
+                        }
                     break;
             
                 case "4":
@@ -79,7 +86,14 @@ class Program
                 
                     case "3":
                         result /= num3;
-                        Console.WriteLine("O Resultado é: " + result + " （⌐■_■)");
+                        if (num3 != 0)
+                        {
+                            Console.WriteLine("O Resultado é: " + result + " （⌐■_■)");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Não pode dividir por zero!");
+                        }
                         break;
                 
                     case "4":
