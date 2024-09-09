@@ -6,12 +6,8 @@ class Program
     {
         string novoCalc = "s"; // aqui já assumo que a string tem o valor de "s" para poder executar uma vez a calculadora. Abaixo, vou mudar o valor de acordo com o input do usuário.
         
-        double resultSum = 0;
-        double resultSub = 0;
-        double resultDiv = 0;
-        double resultMult = 0;
+        double result = 0;
         
-
         while (novoCalc == "s")
         {
             Console.WriteLine("Digite um número de 1 a 4 para a operação que você quer realizar entre dois números: ");
@@ -31,24 +27,24 @@ class Program
             switch(operacao)
             {
                 case "1":
-                    resultSum = num1 + num2;
-                    Console.WriteLine("O Resultado é: " + resultSum + " 乁( •_• )ㄏ");
+                    result = num1 + num2;
+                    Console.WriteLine("O Resultado é: " + result + " 乁( •_• )ㄏ");
                     break;
             
             
                 case "2":
-                    resultSub = num1 - num2;
-                    Console.WriteLine("O Resultado é: " + resultSub + " ( ͡• ͜ʖ ͡• )");
+                    result = num1 - num2;
+                    Console.WriteLine("O Resultado é: " + result + " ( ͡• ͜ʖ ͡• )");
                     break;
             
                 case "3":
-                    resultDiv = num1 / num2;
-                    Console.WriteLine("O Resultado é: " + resultDiv + " （⌐■_■)");
+                    result = num1 / num2;
+                    Console.WriteLine("O Resultado é: " + result + " （⌐■_■)");
                     break;
             
                 case "4":
-                    resultMult = num1 * num2;
-                    Console.WriteLine("O Resultado é: " + resultMult + " ᕕ(⌐■_■)ᕗ 🎉 ");
+                    result = num1 * num2;
+                    Console.WriteLine("O Resultado é: " + result + " ᕕ(⌐■_■)ᕗ 🎉 ");
                     break;
             }
 
@@ -71,27 +67,28 @@ class Program
                 switch(continuarOperacao)
                 {
                     case "1":
-                        resultSum += num3;
-                        Console.WriteLine("O Resultado é: " + resultSum + " 乁( •_• )ㄏ");
+                        result += num3;
+                        Console.WriteLine("O Resultado é: " + result + " 乁( •_• )ㄏ");
                         break;
                 
                 
                     case "2":
-                        resultSub -= num3;
-                        Console.WriteLine("O Resultado é: " + resultSub + " ( ͡• ͜ʖ ͡• )");
+                        result -= num3;
+                        Console.WriteLine("O Resultado é: " + result + " ( ͡• ͜ʖ ͡• )");
                         break;
                 
                     case "3":
-                        resultDiv /= num3;
-                        Console.WriteLine("O Resultado é: " + resultDiv + " （⌐■_■)");
+                        result /= num3;
+                        Console.WriteLine("O Resultado é: " + result + " （⌐■_■)");
                         break;
                 
                     case "4":
-                        resultMult *= num3;
-                        Console.WriteLine("O Resultado é: " + resultMult + " ᕕ(⌐■_■)ᕗ 🎉 ");
+                        result *= num3;
+                        Console.WriteLine("O Resultado é: " + result + " ᕕ(⌐■_■)ᕗ 🎉 ");
                         break;
                 }
-
+                
+                // Essas duas linhas resolvem o problema do programa sempre retornar a executar operações sem dar opção de fechar, apesar de obrigar o usuário a responder duas vezes se quer fazer outra operação com o resultado
                 Console.WriteLine("Deseja realizar uma operação com esse resultado? (s/n)");
                 continuarCalc = Console.ReadLine();
             }
@@ -103,7 +100,7 @@ class Program
             novoCalc = Console.ReadLine();
         }
         
-        Console.WriteLine("Calculadora encerrada. Até mais! ٩(◕‿◕｡)۶"); // esse texto foi sugerido pelo chatgpt com emoji e tudo, o que me deixou um pouco apreensivo.
+        Console.WriteLine("Calculadora encerrada. Até mais! ٩(◕‿◕｡)۶"); // texto foi sugerido pelo chatgpt com emoji e tudo
 
     }
 }
