@@ -91,6 +91,9 @@ class Program
                         Console.WriteLine("O Resultado é: " + resultMult + " ᕕ(⌐■_■)ᕗ 🎉 ");
                         break;
                 }
+
+                Console.WriteLine("Deseja realizar uma operação com esse resultado? (s/n)");
+                continuarCalc = Console.ReadLine();
             }
 
             Console.WriteLine("Deseja realizar uma operação com esse resultado? (s/n)");
