@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq; // Needed for the 'Where' clause
 
 class Employee
 {
@@ -26,14 +25,27 @@ class Program
             new Employee { Nome = "Carla", Departamento = "RH", Salario = 4700 }
         };
 
+        int somaSalarial = 0; // iniciando variável para armazenar a soma dos valores encontrados na variável int Salario dos objetos da lista Employee.
+        int funcionariosTI = 0; // aqui essa variável é usada para incrementar no foreach loop a fim de poder contar o número de objetos com o valor TI na string Departamento.
+
         // Filter for employees in the "TI" department
         foreach (var counter in employees)
         {
             if (counter.Departamento == "TI")
             {
-                Console.WriteLine($"{counter.Salario}");
+                somaSalarial = somaSalarial + counter.Salario;
+                funcionariosTI++;          
             }
-        }         
+        }
+        if (funcionariosTI > 0)
+        {
+            int mediaSalarial = somaSalarial / funcionariosTI;
+            Console.WriteLine($"Existem {funcionariosTI} funcionários de TI recebendo um total de {somaSalarial} com uma média salarial de {mediaSalarial}.");
+        }
+        else
+        {
+            Console.WriteLine("Não há funcionários na área de TI");
+        }
     }
 }
 
