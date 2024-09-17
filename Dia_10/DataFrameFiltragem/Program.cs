@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Enunciado: encontre a média de salário entre os funcionários de TI
+
+using System;
 using System.Collections.Generic;
 using System.Linq; // Needed for the 'Where' clause
 
@@ -25,10 +27,13 @@ class Program
         };
 
         // Filter for employees in the "TI" department
-        foreach (var employee in employees.Where(e => e.Departamento == "TI"))
+        foreach (var counter in employees)
         {
-            Console.WriteLine($"{employee.Nome}, {employee.Departamento}, {employee.Salario}");
-        }
+            if (counter.Departamento == "TI")
+            {
+                Console.WriteLine($"{counter.Salario}");
+            }
+        }         
     }
 }
 
