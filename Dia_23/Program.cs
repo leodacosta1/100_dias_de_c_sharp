@@ -1,8 +1,6 @@
 ﻿int firstValue = 500;
 int secondValue = 600;
 
-int maxValue = Math.Max(firstValue, secondValue);
-
-int largerValue = maxValue;
+int largerValue = Math.Max(firstValue, secondValue);
 
 Console.WriteLine(largerValue);
