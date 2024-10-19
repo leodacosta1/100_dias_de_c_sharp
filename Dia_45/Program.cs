@@ -15,17 +15,27 @@ bool userIsWrong = true;
 
 do
 {
-    string userInput = Console.ReadLine().Trim().ToLower();
+    string? userInput = Console.ReadLine();
 
-    if (userInput == "Administrator" || userInput == "Manager" || userInput == "User")
+    if (userInput != null)
     {
-        Console.WriteLine($"Welcome.");
-        break; //aqui é necessário o break ou o userIsWrong = true pra poder sair do loop caso tenha entrado no else uma vez
+        string answer = userInput.Trim();
+
+        if (answer.ToLower() == "administrator" || 
+            answer.ToLower() == "manager" || 
+            answer.ToLower() == "user")
+        {
+            Console.WriteLine($"Welcome.");
+            break;
+        }
+        else
+        {
+            Console.WriteLine($"What?");
+            userIsWrong = false;
+        }
     }
-    else
-    {
-        Console.WriteLine($"What?");
-        userIsWrong = false;
-    }
+    
+    
+        
     
 } while (userIsWrong == false);
