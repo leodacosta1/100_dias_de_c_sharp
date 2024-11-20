@@ -24,7 +24,13 @@ namespace Dia_75
 
         static void Main(string[] args)
         {
+            // Inicializando variável com valor da lista cities usando método .Where() com parâmetro uma função lambda
             var filteredCities = cities.Where(town => town.City_Id > 1);
+            // town (ou contador/counter/t/x etc) percorre a lista cities e retorna o valor onde
+            // town tem o parâmetro City_Id maior que 1.
+
+            // para cada vez que a variável counter percorrer filteredCities, imprima o parâmetro
+            // City_Name de cada um desses counters
             foreach(var counter in filteredCities)
             {
                 Console.WriteLine(counter.City_Name);
