@@ -9,7 +9,17 @@ namespace Stopwatch
     {
         static void Main(string[] args)
         {
-            Start(6); // trocamos a declaração da variável time de dentro da função Start (int time = 6;) para usar como parâmetro: Start(int time). Então, ao chamarmos a função, declaramos um valor, que vai ser usado pelo parâmetro time.  
+            Menu();
+            //Start(6); // trocamos a declaração da variável time de dentro da função Start (int time = 6;) para usar como parâmetro: Start(int time). Então, ao chamarmos a função, declaramos um valor, que vai ser usado pelo parâmetro time.  
+        }
+
+        static void Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("S = Segundo");
+            Console.WriteLine("M = Minuto");
+            Console.WriteLine("0 = Sair");
+            Console.WriteLine("Quando tempo deseja contar?");
         }
 
         // inicia o cronômetro
@@ -28,6 +38,10 @@ namespace Stopwatch
                 // Thread trabalha com a execução atual do processador. Vamos usar Thread para fazer o cronômetro esperar 1s antes de passar para o próximo número
                 Thread.Sleep(1000); // 1000 milissegundos
             }
+
+            Console.Clear();
+            Console.WriteLine("Stopwatch finalizado");
+            Thread.Sleep(2500); // Esse Thread.Sleep é usado para dar uma pausa (de 2,5s) antes do programa voltar para o menu
         }
     }
 }
