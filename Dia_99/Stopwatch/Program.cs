@@ -34,8 +34,15 @@ namespace Stopwatch
             // char type = char.Parse(data.Substring(data.Length-1,1));
             int time = int.Parse(data.Substring(0,data.Length - 1)); // Susbstring pega um pedaço da string, no caso data. Como já pegamos o último caractere com char type, podemos pedir um valor que seja a contagem total de caracteres de data, menos 1. Ou seja, percorremos da posição zero até a penúltima da string.
 
-            Console.WriteLine(type);
-            Console.WriteLine(time);
+            int multiplier = 1;
+
+            if (type == 'm')
+                multiplier = 60;
+
+            if (time == 0)
+                System.Environment.Exit(0);
+
+            PreStart(time * multiplier);
         }
 
         static void PreStart(int time)
@@ -46,7 +53,7 @@ namespace Stopwatch
             Console.WriteLine("Set...");
             Thread.Sleep(1000);
             Console.WriteLine("Go...");
-            Thread.Sleep(2500);
+            Thread.Sleep(1000);
 
             Start(time);
         }
@@ -70,6 +77,7 @@ namespace Stopwatch
             Console.Clear();
             Console.WriteLine("Stopwatch finalizado");
             Thread.Sleep(2500); // Esse Thread.Sleep é usado para dar uma pausa (de 2,5s) antes do programa voltar para o menu
+            Menu();
         }
     }
 }
