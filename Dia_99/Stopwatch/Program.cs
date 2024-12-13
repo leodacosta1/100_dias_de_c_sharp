@@ -20,6 +20,17 @@ namespace Stopwatch
             Console.WriteLine("M = Minuto => 1m = 1 minuto");
             Console.WriteLine("0 = Sair");
             Console.WriteLine("Quando tempo deseja contar?");
+
+            string data = Console.ReadLine().ToLower(); // não precisamos converter a saída de console.readline porque o usuário vai digitar um número junto com uma letra (10s ou 10m), que é uma string. ToLower é um método de string que converte os caracteres para minúsculo e portanto não precisamos fazer uma verificação só pra checar se o valor foi inserido em maísculas ou minúsculas
+            char type = char.Parse(data.Substring(data.Length-1,1)); // os parâmetros de Substring são o valor inicial (conta a posição de um caracter em uma string com valor inicial de 0, como em em array) e a quantidade de caracteres que a gente quer pegar. se data = fruta, data.Substring(1,1) é igual a 'r', que retorna como uma string. Por isso precisamos fazer uma conversão explícita para assimilarmos o valor ao tipo char.
+            // pra encontrarmos a posição do último caractere, contamos o total de caracteres com .Length e subtraímos 1, pois a soma de caracteres começa com 1 e a posição em um caractere começa com 0.
+
+            // Abaixo a evolução do código a partir da linha de raciocínio explicada acima:
+            // char type = data.Substring(1,1);
+            // char type = char.Parse(data.Substring(1,1));
+            // char type = char.Parse(data.Substring(data.Length-1,1));
+            Console.WriteLine(data);
+            Console.WriteLine(type);
         }
 
         // inicia o cronômetro
