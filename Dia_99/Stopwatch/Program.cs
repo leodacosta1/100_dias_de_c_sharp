@@ -9,13 +9,13 @@ namespace Stopwatch
     {
         static void Main(string[] args)
         {
-            Start();
+            Start(6); // trocamos a declaração da variável time de dentro da função Start (int time = 6;) para usar como parâmetro: Start(int time). Então, ao chamarmos a função, declaramos um valor, que vai ser usado pelo parâmetro time.  
         }
 
         // inicia o cronômetro
-        static void Start()
+        static void Start(int time)
         {
-            int time = 10;
+            // int time = 6;
             int currentTime = 0;
 
             //exibe o temporizador
