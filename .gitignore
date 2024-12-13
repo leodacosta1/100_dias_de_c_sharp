@@ -1,5 +1,6 @@
 **/obj/
 **/bin/
+**/.vscode/
 
 # Ignore AssemblyInfo auto-generated files
 AssemblyInfo.cs
