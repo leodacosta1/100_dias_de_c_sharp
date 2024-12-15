@@ -2,7 +2,7 @@
 // balta.io
 
 using System;
-using System.io;
+using System.IO;
 
 namespace TextEditor
 {
@@ -31,7 +31,23 @@ namespace TextEditor
             }
         }
         
-        static void Abrir(){}
+        static void Abrir()
+        {
+            Console.Clear();
+            Console.WriteLine("Qual caminho do arquivo?");
+            string path = Console.ReadLine();
+
+            // a gente usa o using sempre que a gente vai ler ou salvar um arquivo
+            using(var file = new StreamReader(path))
+            {
+                string text = file.ReadToEnd();
+                Console.WriteLine(text);
+            }
+
+            Console.WriteLine("");
+            Console.ReadLine();
+            Menu();
+        }
 
         static void Editar()
         {
@@ -50,7 +66,7 @@ namespace TextEditor
             // aqui fica um exemplo perfeito do uso de um do while ser mais adequado que um while. Se fosse apenas while, o programa esperaria um input pra executar o código, visto que estamos usando o ReadKey dentro do parâmetro do laço de repetição
             while (Console.ReadKey().Key != ConsoleKey.Escape); // ReadKey().Key lê a tecla
 
-            Console.Write(text);
+            Salvar(text);
         }
 
         static void Salvar(string text)
@@ -70,6 +86,10 @@ namespace TextEditor
             {
                 file.Write(text);
             }
+
+            Console.WriteLine($"Arquivo {path} salvo com sucesso!");
+            Console.ReadLine();
+            Menu();
         }
     }
 }
