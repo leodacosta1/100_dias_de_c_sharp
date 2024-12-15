@@ -2,6 +2,7 @@
 // balta.io
 
 using System;
+using System.io;
 
 namespace TextEditor
 {
@@ -50,6 +51,25 @@ namespace TextEditor
             while (Console.ReadKey().Key != ConsoleKey.Escape); // ReadKey().Key lê a tecla
 
             Console.Write(text);
+        }
+
+        static void Salvar(string text)
+        {
+            Console.Clear();
+            Console.WriteLine("Qual caminho para salvar o arquivo?");
+            var path = Console.ReadLine();
+
+            // objeto para abrir um arquivo
+            // new StreamWriter ou StreamReader
+            // Stream é fluxo e Writer é escritor, ou escrita. Fluxo de escrita (de bytes). Um fluxo de bytes é um arquivo. Todos arquivos são essencialmente um fluxo de bytes.
+            // mas pra abrir um arquivo, sempre precisamos fechá-lo pra evitar problemas de memória. Então usamos o using()
+            // Toda vez que usamos o using com um objeto como parâmetro, o using cria, abre, usa e fecha o objeto automaticamente.
+
+
+            using(var file = new StreamWriter(path)) // StreamWriter sempre pede como parâmetro um caminho pro arquivo, que já fornecemos com a variável path 
+            {
+                file.Write(text);
+            }
         }
     }
 }
